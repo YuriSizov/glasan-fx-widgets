@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://msv4norsqpik"]
+
+[resource]
+TunerSlider/base_type = &"MarginContainer"
+TunerSlider/colors/font_color = Color(0.803922, 0.807843, 0.819608, 1)

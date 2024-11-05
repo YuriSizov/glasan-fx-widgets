@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://gprht0fu6hyh"]
+
+[ext_resource type="Script" path="res://widgets/glow_button/GlowButton.gd" id="1_4l6pn"]
+[ext_resource type="Shader" path="res://widgets/glow_button/GlowButton.gdshader" id="1_31jaw"]
+[ext_resource type="Shader" path="res://widgets/glow_button/GlowLabel.gdshader" id="3_7caes"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlcl6"]
+resource_local_to_scene = true
+shader = ExtResource("1_31jaw")
+shader_parameter/button_size = Vector2(65, 24)
+shader_parameter/base_incline = 0.18
+shader_parameter/horizontal_incline = 2.05
+shader_parameter/main_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/back_color = Color(0, 0, 0, 1)
+shader_parameter/light_color = Color(1, 1, 1, 0.163)
+shader_parameter/global_shine = 0.334
+shader_parameter/top_shine = 1.541
+shader_parameter/side_edge_shine = 0.622
+shader_parameter/side_edge_cone = 6.849
+shader_parameter/side_edge_smoothness = 0.048
+shader_parameter/side_edge_shadow = 3.918
+shader_parameter/vignette_center = 40.554
+shader_parameter/vignette_rim = 0.667
+shader_parameter/vignette_intensity = 0.4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30d8b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evuh8"]
+resource_local_to_scene = true
+shader = ExtResource("3_7caes")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n63da"]
+resource_local_to_scene = true
+shader = ExtResource("3_7caes")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/intensity = 0.0
+
+[node name="GlowButton" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 7.0
+offset_bottom = 5.0
+theme_type_variation = &"GlowButton"
+toggle_mode = true
+text = "TEXT"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_4l6pn")
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vlcl6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_30d8b")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_evuh8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_n63da")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = -8.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://btx1p6ihy232n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgx22"]
+bg_color = Color(0.00351917, 0.00351917, 0.00351916, 1)
+
+[resource]
+ElectronicLabel/base_type = &"PanelContainer"
+ElectronicLabel/colors/font_color = Color(0.874525, 0.881914, 0.855576, 1)
+ElectronicLabel/constants/full_intensity = 82
+ElectronicLabel/font_sizes/font_size = 12
+ElectronicLabel/styles/panel = SubResource("StyleBoxFlat_rgx22")

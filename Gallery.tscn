@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=3 uid="uid://drevyww3hki44"]
+
+[ext_resource type="PackedScene" uid="uid://chq8boo5j014r" path="res://widgets/electronic_label/ElectronicLabel.tscn" id="1_b6f75"]
+[ext_resource type="Theme" uid="uid://bpwfhtd227bkw" path="res://Gallery.tres" id="1_lwpgc"]
+[ext_resource type="Script" path="res://Gallery.gd" id="2_5icxe"]
+[ext_resource type="PackedScene" uid="uid://b84cvvupfiqo8" path="res://widgets/flicker_knob/FlickerKnob.tscn" id="2_6lv1p"]
+[ext_resource type="PackedScene" uid="uid://gprht0fu6hyh" path="res://widgets/glow_button/GlowButton.tscn" id="3_fwm56"]
+[ext_resource type="PackedScene" uid="uid://xob01bdx0r2f" path="res://widgets/option_flipper/OptionFlipper.tscn" id="4_gy331"]
+[ext_resource type="Theme" uid="uid://btx1p6ihy232n" path="res://widgets/electronic_label/ElectronicLabel.tres" id="4_s6nri"]
+[ext_resource type="PackedScene" uid="uid://dgr0kta03k8ic" path="res://widgets/roller_knob/RollerKnob.tscn" id="5_85usc"]
+[ext_resource type="Theme" uid="uid://dsgerblqhr314" path="res://widgets/flicker_knob/FlickerKnob.tres" id="6_um0gd"]
+[ext_resource type="PackedScene" uid="uid://dikcn6vh82w0j" path="res://widgets/tuner_slider/TunerSlider.tscn" id="7_iglej"]
+[ext_resource type="Theme" uid="uid://crhy10bv6s7io" path="res://widgets/glow_button/GlowButton.tres" id="8_7qncs"]
+[ext_resource type="Theme" uid="uid://ku0c4ivpmud4" path="res://widgets/option_flipper/OptionFlipper.tres" id="10_6p5kh"]
+[ext_resource type="Theme" uid="uid://bf4p7c78qiy7h" path="res://widgets/roller_knob/RollerKnob.tres" id="13_vdnvy"]
+[ext_resource type="Theme" uid="uid://msv4norsqpik" path="res://widgets/tuner_slider/TunerSlider.tres" id="15_iba83"]
+
+[node name="Gallery" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lwpgc")
+script = ExtResource("2_5icxe")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.115496, 0.347178, 0.475408, 1)
+
+[node name="Layout" type="HFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = -116.0
+offset_right = 155.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+alignment = 1
+
+[node name="ElectronicLabel" parent="Layout" instance=ExtResource("1_b6f75")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 28)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_s6nri")
+text = "HELLO!"
+
+[node name="FlickerKnob" parent="Layout" instance=ExtResource("2_6lv1p")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_um0gd")
+
+[node name="GlowButton" parent="Layout" instance=ExtResource("3_fwm56")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("8_7qncs")
+off_color = Color(0.239658, 0.165437, 0.280211, 1)
+on_color = Color(0.719756, 0.460025, 0.935642, 1)
+
+[node name="OptionFlipper" parent="Layout" instance=ExtResource("4_gy331")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("10_6p5kh")
+options = Array[String](["THIS", "IS", "SPARTA", "!!!"])
+option_colors = Array[Color]([Color(0.946238, 0.792114, 0.360492, 1), Color(0.904042, 0.582993, 0.216625, 1), Color(0.656014, 0.227148, 0.106453, 1), Color(0.486983, 0, 0.0847214, 1)])
+option_text_colors = Array[Color]([Color(0.0229799, 0.0229799, 0.0229799, 1), Color(0.0235294, 0.0235294, 0.0235294, 1), Color(0.898039, 0.898039, 0.898039, 1), Color(0.898391, 0.898391, 0.898391, 1)])
+
+[node name="RollerKnob" parent="Layout" instance=ExtResource("5_85usc")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("13_vdnvy")
+text = "ROLL"
+knob_value = 16
+max_value = 32
+safe_min_value = 12
+safe_max_value = 24
+
+[node name="TunerSlider" parent="Layout" instance=ExtResource("7_iglej")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("15_iba83")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 44.0
+offset_right = 379.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 28
+text = "Glasan FX Widgets"

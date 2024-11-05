@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://crhy10bv6s7io"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3wix"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mb7o6"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xu2n5"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eplmh"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mafp"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[resource]
+GlowButton/base_type = &"Button"
+GlowButton/colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+GlowButton/colors/font_normal_color = Color(0.795394, 0.795394, 0.795394, 1)
+GlowButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+GlowButton/colors/off_back_color = Color(0, 0, 0, 1)
+GlowButton/constants/on_label_intensity = 65
+GlowButton/styles/disabled = SubResource("StyleBoxEmpty_w3wix")
+GlowButton/styles/focus = SubResource("StyleBoxEmpty_mb7o6")
+GlowButton/styles/hover = SubResource("StyleBoxEmpty_xu2n5")
+GlowButton/styles/normal = SubResource("StyleBoxEmpty_eplmh")
+GlowButton/styles/pressed = SubResource("StyleBoxEmpty_3mafp")
